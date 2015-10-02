@@ -137,7 +137,7 @@ class Crawler(object):
 
 	def isindexed(self, url):
 		"""
-		URL is indexed if the URL has a row_id in urllist.
+		URL is indexed if the URL has a rowid in urllist.
 		"""
 		result = self.con.execute("select rowid from urllist where url='%s'" % url).fetchone()
 		if result != None:
