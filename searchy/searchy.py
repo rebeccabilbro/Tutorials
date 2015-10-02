@@ -35,7 +35,7 @@ derived, Toby Segaran's Programming Collective Intelligence.
 ###############################################################
 # Imports
 ###############################################################
-import urllib2				# Library for downloading webpages.
+import urllib2			# Library for downloading webpages.
 from BeautifulSoup import *	# Library for parsing webpages.
 from urlparse import urljoin	# Library for breaking URLs into parts.
 from sqlite3 import dbapi2 as sqlite
