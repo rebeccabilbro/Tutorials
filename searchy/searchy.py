@@ -68,10 +68,10 @@ class Crawler(object):
         Write a method to tell 'self' how to connect to the database
         using SQLite.
 
-		Note: you'll have to create a connection called `self.con`
+        Note: you'll have to create a connection called `self.con`
         '''
-        pass 
-		#self.con = # fill this in
+        pass
+        #self.con = # fill this in
 
     def __del__(self):
         '''
