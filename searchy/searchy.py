@@ -35,8 +35,8 @@ derived, Toby Segaran's Programming Collective Intelligence.
 ###############################################################
 # Imports
 ###############################################################
-import urllib2					# Library for downloading webpages.
-from BeautifulSoup import *		# Library for parsing webpages.
+import urllib2	# Library for downloading webpages.
+from BeautifulSoup import *	# Library for parsing webpages.
 from urlparse import urljoin	# Library for breaking URLs into parts.
 from sqlite3 import dbapi2 as sqlite
 
@@ -268,9 +268,21 @@ class Crawler(object):
 			pages = newpages
 
 	def geturlname(self, id):
+		'''
+		Once we've ranked the pages, we'll use this method to get the name
+		of the top pages.
+		'''
 		return self.con.execute('select url from urllist where rowid=%d' % id).fetchone()[0]
 
 	def calculatepagerank(self, iterations=20):
+		'''
+		This is an implementation of Google's famous PageRank algorithm.
+
+		The algorithm calculates the probability that someone clicking around
+		on the internet will end up at a certain page. The more inbound links
+		the page has from other popular pages, the more likely it is that you'll
+		end up there!
+		'''
 		# Clear out the current PageRank tables
 		self.con.execute('drop table if exists pagerank')
 		self.con.execute('create table pagerank(urlid primary key, score)')
