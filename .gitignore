@@ -1,0 +1,9 @@
+# Some helpful cleanup stuff
+
+*.py[oc]
+.DS_Store
+
+.ipynb_checkpoints
+venv
+env
+*.old
