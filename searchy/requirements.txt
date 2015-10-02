@@ -1,0 +1,2 @@
+# For parsing web pages
+BeautifulSoup==3.2.1
