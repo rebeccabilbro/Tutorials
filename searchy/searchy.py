@@ -24,14 +24,14 @@ stopwords = set(['the', 'of', 'to', 'and', 'a', 'in', 'is', 'it'])
 # Class and Methods
 ###############################################################
 class Crawler(object):
-	"""
+	'''
 	Create a simple web crawler that can be seeded with a small set of pages.
-	"""
+	'''
 
 	def __init__(self, dbname):
-		"""
+		'''
 		Initialize the crawler with the name of database.
-		"""
+		'''
 		self.con = sqlite.connect(dbname)
 
 	def __del__(self):
@@ -81,9 +81,9 @@ class Crawler(object):
 
 
 	def addtoindex(self, url, soup):
-		"""
+		'''
 		Adds new words and pages to the database.
-		"""
+		'''
 		if self.isindexed(url):
 			return
 		print 'Indexing ' + url
@@ -106,10 +106,10 @@ class Crawler(object):
 
 
 	def getentryid(self, table, field, value, createnew=True):
-		"""
+		'''
 		Auxillary function for getting an entry id and adding
 		it if it's not present.
-		"""
+		'''
 		cur = self.con.execute("select rowid from %s where %s = '%s'" % (table, field, value))
 		result = cur.fetchone()
 		if result == None:
@@ -136,9 +136,9 @@ class Crawler(object):
 
 
 	def isindexed(self, url):
-		"""
+		'''
 		URL is indexed if the URL has a rowid in urllist.
-		"""
+		'''
 		result = self.con.execute("select rowid from urllist where url='%s'" % url).fetchone()
 		if result != None:
 			# Check if URL has been crawled
