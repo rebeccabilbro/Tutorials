@@ -40,6 +40,8 @@ from BeautifulSoup import *    # Library for parsing webpages.
 from urlparse import urljoin    # Library for breaking URLs into parts.
 from sqlite3 import dbapi2 as sqlite
 
+# Read about sqlite3 and the important commands here:
+# https://docs.python.org/2/library/sqlite3.html
 
 ###############################################################
 # Global Variables
