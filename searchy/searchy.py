@@ -87,7 +87,6 @@ class Crawler(object):
         '''
         pass # fill this in
 
-
     def createindextables(self):
         '''
         Ok, here's the meat of this workshop.
@@ -103,6 +102,8 @@ class Crawler(object):
         4. a table to hold the words actually used in links
         5. a table to hold the relationships between linked pages
 
+		Note: Each table has a field 'rowid' by default in sqlite,
+		so you don't have to add that one!
         '''
         # Finish filling this in by adding the 5 tables to the database
         #
@@ -154,13 +155,13 @@ class Crawler(object):
 
 
     def addtoindex(self, url, soup):
-        """
+        '''
         This method will call on the previous two methods (gettextonly
         and separatewords) to get a list of words on the page. Then it
         will add and index the page and its words to the database.
 
         I did this one for you.
-        """
+        '''
         if self.isindexed(url):
             return
         print 'Indexing ' + url
@@ -183,12 +184,12 @@ class Crawler(object):
 
 
     def getentryid(self, table, field, value, createnew=True):
-        """
+        '''
         This is an auxillary function for getting an entry id and
         adding it to the database if it's not already there.
 
         I did this one for you.
-        """
+        '''
         cur = self.con.execute("select rowid from %s where %s = '%s'" % (table, field, value))
         result = cur.fetchone()
         if result == None:
@@ -200,12 +201,12 @@ class Crawler(object):
 
 
     def addlinkref(self, urlfrom, urlto, linktext):
-        """
+        '''
         The method enables us to remember which pages linked to each other.
         This will be important for scoring and ranking later!
 
         I did this one for you.
-        """
+        '''
         words = self.separatewords(linktext)
         fromid = self.getentryid('urllist','url',urlfrom)
         toid = self.getentryid('urllist','url',urlto)
@@ -221,11 +222,11 @@ class Crawler(object):
 
 
     def isindexed(self, url):
-        """
+        '''
         URL is indexed if the URL has a rowid in urllist.
 
         I did this one for you.
-        """
+        '''
         result = self.con.execute("select rowid from urllist where url='%s'" % url).fetchone()
         if result != None:
             # Check if URL has been crawled
