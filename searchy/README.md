@@ -40,10 +40,10 @@ Right now you should see the following:
 
 That's because it's your job to implement the database handling portion of this code! Take a look at the following functions to get started.
 
-1. `Crawler.__init__` on line 62
-2. `Crawler.__del__` on line 76
-3. `Crawler.dbcommit` on line 82
-4. `Crawler.createindextables` on line 89
+1. `Crawler.__init__` on line 64
+2. `Crawler.__del__` on line 78
+3. `Crawler.dbcommit` on line 84
+4. `Crawler.createindextables` on line 90
 
 Once you've filled in the database handling utilities, you'll be able to run the code! After you've got it working, take a look at what's in the database using SQLite on the command line (or a SQLite GUI browser). Then review how the search and storage process is working. See if you can modify it or make it better!
 
@@ -60,3 +60,5 @@ CREATE TABLE link (
     toid INTEGER
 );
 ```
+
+I recommend you read https://docs.python.org/2/library/sqlite3.html to figure out the commands for SQLite - it will make the lab a lot easier!
