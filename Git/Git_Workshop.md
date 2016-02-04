@@ -15,22 +15,22 @@ $ git --version
 Note: I am working on a Mac. If you are using Windows and want to know the
 Windows versions of terminal commands, there's a look-up table [here](http://www.lemoda.net/windows/windows2unix/windows2unix.html).
 
-If you don't already have Git installed, do that now:
-
 Create a [Github account](http://github.com).
 
-Download and install the latest version of [Git](http://git-scm.com/downloads).
+If you don't already have Git installed, do that now:
 
-Configure Git with your name and email by typing the following into your terminal:
+    - Download and install the latest version of [Git](http://git-scm.com/downloads).
+    - Configure Git with your name and email by typing the following into your terminal:
 
 ```bash
 $ git config --global user.name "YOUR NAME"
 $ git config --global user.email "YOUR EMAIL ADDRESS"
 ```
 
-Now [create a new repository](https://github.com/new). Add a title and a
-description, set the repo to Public, initialize with a _README_, and click Create.
-Don't give your repos the same names!
+Each of you should [create a new repository](https://github.com/new) - but don't call them the same thing. Add a title and a description, set the repo to Public, initialize with a _README_, and click Create.
+
+Now, give your team mate permission to collaborate: Go to the settings tab on your repo page, click on Collaborators, and add your team mate's Github username.
+
 
 
 ## Working with a repository
