@@ -35,9 +35,7 @@ Now, give your team mate permission to collaborate: Go to the settings tab on yo
 
 ## Working with a repository
 
-Next, clone your empty repo. Look in the bottom righthand corner of the repo
-page on Github to find the URL. The default is an HTTPS clone, which is fine to
-use. There are other choices, like SSH, which you can read more about [here](https://help.github.com/articles/which-remote-url-should-i-use/).
+Next, clone your empty repo. Look in the bottom righthand corner of the repo page on Github to find the URL. The default is an HTTPS clone, but here in the SCS building, SSH will work better because of the network settings. You can read more about [options](https://help.github.com/articles/which-remote-url-should-i-use/). You can always switch between HTTPS and SSH later by following [these instructions](https://help.github.com/articles/changing-a-remote-s-url/).
 """
 
 ### Now in your terminal, type:
